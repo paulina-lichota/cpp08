@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/06 20:47:26 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:48:35 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 
 // Implement a member function that use range of iterators to add multiple numbers to your Span in a single cal
 
-template <class T>
 class Span
 {
     
