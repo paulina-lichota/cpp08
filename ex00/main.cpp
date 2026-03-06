@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 18:57:00 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/06 20:34:27 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:42:35 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <iterator>
+#include <numeric>
 
 #include <vector>
 #include <list>
@@ -109,13 +110,27 @@ int main()
         std::cout << "Looking for 'z'..." << std::endl;
         it = easyfind(l, 'z');
         if (it != l.end())
+        {
             std::cout << GREEN << "Found at index: " << std::distance(l.begin(), it) << RESET << std::endl;
+        }
         else
             std::cout << MAGENTA << "Not found" << RESET << std::endl;
         std::cout << std::endl;
 
         std::cout << "Looking for 'o'..." << std::endl;
         it = easyfind(l, 'o');
+        if (it != l.end())
+        {
+            std::cout << GREEN << "Found at index: " << std::distance(l.begin(), it) << RESET << std::endl;
+            int count = std::count(l.begin(), l.end(), 'o');
+            std::cout << GREEN << "It appears " << count << " times" << RESET << std::endl;
+        }
+        else
+            std::cout << MAGENTA << "Not found" << RESET << std::endl;
+        std::cout << std::endl;
+
+            std::cout << "Looking for 'z'..." << std::endl;
+        it = easyfind(l, 'z');
         if (it != l.end())
             std::cout << GREEN << "Found at index: " << std::distance(l.begin(), it) << RESET << std::endl;
         else
