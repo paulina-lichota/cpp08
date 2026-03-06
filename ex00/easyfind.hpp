@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 18:57:11 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/06 19:02:53 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:12:53 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # define MAGENTA 	"\033[0;35m"
 # define RESET   	"\033[0m"
 
-// Write a function template easyfind that accepts a type T. It takes two parameters:
-// the first one is of type T, and the second one is an integer.
+#include <iterator>
+#include <algorithm>
 
-// Assuming T is a container of integers, this function has to find the first occurrence
-// of the second parameter in the first parameter.
+// restituisce iteratore
+// devo specificare typename perche' senno' il compilatore non capisce che e' un tipo
 template <typename T>
-T easyfind(T a, int b);
+typename T::iterator easyfind(T &a, int b);
 
 #include "easyfind.tpp"
 
