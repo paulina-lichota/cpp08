@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:48:37 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/08 19:24:37 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/08 19:31:21 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,14 @@ int Span::shortestSpan()
     // confronto solo elementi vicini
     // it = v2.begin() già inizializzato
     // si usa != per standard iteratori
-    int diff = *it2 - *it1; // oppure diff = std::numeric_limits<int>::max() 
+    int diff = *it2 - *it1;
+    /*
+      diff = std::numeric_limits<int>::max()
+      e' un pattern piu' robusto:
+      anche se il ciclo non viene mai eseguito
+      il valore rimane “impossibile” (max int)
+      quindi puoi gestire il caso a parte.
+    */
     for (; it2 != v2.end(); ++it1, ++it2)
     {
       if (*it2 - *it1 < diff)
@@ -55,4 +62,9 @@ int Span::longestSpan()
     std::vector<int> v2 = numbers;
     std::sort(v2.begin(), v2.end());
     return v2.back() - v2.front();
+}
+
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+  // ...
 }

@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/08 18:41:33 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/08 19:31:58 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Span
         unsigned int _N;
     public:
         Span(unsigned int N);
+        /* TODO rule of 3 */
         void addNumber(int number);
         int shortestSpan();
         int longestSpan();
