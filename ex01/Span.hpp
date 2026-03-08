@@ -6,12 +6,17 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/06 20:48:35 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/08 18:41:33 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
+
+# include <iostream>
+# include <vector>
+# include <iterator>
+# include <algorithm>
 
 // can store a maximum of N integers. N is an unsigned int variable and will be the only parameter passed to the constructor.
 
@@ -26,7 +31,15 @@
 
 class Span
 {
-    
+    private:
+        std::vector<int> numbers;
+        unsigned int _N;
+    public:
+        Span(unsigned int N);
+        void addNumber(int number);
+        int shortestSpan();
+        int longestSpan();
+        void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };
 
 #endif

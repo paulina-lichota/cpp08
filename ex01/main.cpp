@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:07 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/06 20:48:45 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/08 19:10:23 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 // Test your Span with at least 10,000 numbers. More would be even better.
 
+// handle only span of different numbers (no duplicates)
 int main()
 {
     Span sp = Span(5);
