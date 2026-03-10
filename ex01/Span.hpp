@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/10 16:23:46 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 16:42:52 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ class Span
         Span(const Span& other);
         Span& operator=(const Span& other);
         ~Span();
-        /* TODO rule of 3 */
         void addNumber(int number);
         int shortestSpan();
         int longestSpan();
