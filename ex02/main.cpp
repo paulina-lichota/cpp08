@@ -6,13 +6,15 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:41:31 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/10 16:42:07 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 16:50:52 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "MutantStack.hpp"
-#include "iostream"
+#include <iostream>
+#include <list>
+#include <stack>
 
 int main()
 {
@@ -34,10 +36,35 @@ int main()
         --it;
         while (it != ite)
         {
-        std::cout << *it << std::endl;
-        ++it;
+            std::cout << *it << std::endl;
+            ++it;
         }
         std::stack<int> s(mstack);
+        return 0;
+    }
+    {
+        std::list<int> l;
+        l.push_back(5);
+        l.push_back(17);
+        std::cout << l.back() << std::endl; // (top) ultimo inserito, non lo rimuove
+        l.pop_back(); // (pop) rimuove l'ultimo inserito, non lo restituisce
+        std::cout << l.size() << std::endl;
+        l.push_back(3);
+        l.push_back(5);
+        l.push_back(737);
+        //[...]
+        l.push_back(0);
+        std::list<int>::iterator it = l.begin();
+        std::list<int>::iterator ite = l.end();
+        ++it;
+        --it;
+        while (it != ite)
+        {
+            std::cout << *it << std::endl;
+            ++it;
+        }
+        // std::stack<int> s(l); // non funziona, devo specificare il tipo del container sottostante
+        std::stack<int, std::list<int>> s(l);
         return 0;
     }
 }
