@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:44:38 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/08 19:31:58 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 16:23:46 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <vector>
 # include <iterator>
 # include <algorithm>
+
+# define GREEN   	"\033[0;32m"
+# define YELLOW  	"\033[0;33m"
+# define BLUE    	"\033[0;34m"
+# define MAGENTA 	"\033[0;35m"
+# define RESET   	"\033[0m"
 
 // can store a maximum of N integers. N is an unsigned int variable and will be the only parameter passed to the constructor.
 
@@ -36,11 +42,15 @@ class Span
         unsigned int _N;
     public:
         Span(unsigned int N);
+        Span(const Span& other);
+        Span& operator=(const Span& other);
+        ~Span();
         /* TODO rule of 3 */
         void addNumber(int number);
         int shortestSpan();
         int longestSpan();
         void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+        void printNumbers();
 };
 
 #endif

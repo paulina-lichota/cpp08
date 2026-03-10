@@ -6,13 +6,32 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 20:48:37 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/08 19:31:21 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 16:23:52 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 Span::Span(unsigned int N) : _N(N)
+{
+}
+
+Span::Span(const Span& other) : _N(other._N)
+{
+    numbers = other.numbers;
+}
+
+Span& Span::operator=(const Span& other)
+{
+    if (this != &other)
+    {
+        _N = other._N;
+        numbers = other.numbers;
+    }
+    return *this;
+}
+
+Span::~Span()
 {
 }
 
@@ -64,7 +83,29 @@ int Span::longestSpan()
     return v2.back() - v2.front();
 }
 
+void Span::printNumbers()
+{
+  size_t size = numbers.size();
+  if (size == 0)
+  {
+    std::cout << "Empty Span" << std::endl;
+    return;
+  }
+  std::vector<int>::iterator it = numbers.begin();
+  std::vector<int>::iterator end = numbers.end();
+  for ( ; it != end; ++it)
+  {
+    std::cout << *it << " ";
+  }
+  std::cout << std::endl;
+}
+
+// instead of using addNumber and reallocating memory every time
+// calculate the size and mass insert all numbers at once, using vector::insert
 void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-  // ...
+  size_t count = std::distance(begin, end);
+  if (numbers.size() + count > _N)
+    throw std::runtime_error("Span is full");
+  numbers.insert(numbers.end(), begin, end);
 }
