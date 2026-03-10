@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:42:32 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/10 19:58:27 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 20:07:37 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 /*
     Iterators:
     https://cplusplus.com/reference/iterator/RandomAccessIterator/
+*/
+
+/*
+    reverse_iterator gestisce internamente la posizione corretta 
+    (ad esempio, rbegin() punta all’ultimo elemento, non a end()-1) e
+    permette di usare ++ per andare indietro
+    rendendo il codice più leggibile e compatibile con le funzioni STL che lavorano con iteratori
 */
 
 #ifndef MUTANTSTACK_HPP

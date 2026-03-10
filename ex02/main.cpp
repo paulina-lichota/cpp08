@@ -6,7 +6,7 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:41:31 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/10 19:59:20 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 20:15:10 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main()
             ++it;
         }
         std::stack<int> s(mstack);
+        std::cout << "size: " << mstack.size() << std::endl;
     }
     {
         std::cout << GREEN << "=========== same with std::list ===========" << RESET << std::endl;
@@ -65,5 +66,6 @@ int main()
         }
         // std::stack<int> s(l); // non funziona, devo specificare il tipo del container sottostante
         std::stack<int, std::list<int> > s(l);
+        std::cout << "size: " << l.size() << std::endl;
     }
 }
