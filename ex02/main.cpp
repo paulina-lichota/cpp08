@@ -6,10 +6,9 @@
 /*   By: plichota <plichota@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:41:31 by plichota          #+#    #+#             */
-/*   Updated: 2026/03/10 16:55:30 by plichota         ###   ########.fr       */
+/*   Updated: 2026/03/10 19:59:20 by plichota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "MutantStack.hpp"
 #include <iostream>
@@ -19,6 +18,7 @@
 int main()
 {
     {
+        std::cout << GREEN << "=========== MutantStack with std::stack ===========" << RESET << std::endl;
         MutantStack<int> mstack;
         mstack.push(5);
         mstack.push(17);
@@ -40,9 +40,9 @@ int main()
             ++it;
         }
         std::stack<int> s(mstack);
-        return 0;
     }
     {
+        std::cout << GREEN << "=========== same with std::list ===========" << RESET << std::endl;
         std::list<int> l;
         l.push_back(5);
         l.push_back(17);
@@ -64,7 +64,6 @@ int main()
             ++it;
         }
         // std::stack<int> s(l); // non funziona, devo specificare il tipo del container sottostante
-        std::stack<int, std::list<int>> s(l);
-        return 0;
+        std::stack<int, std::list<int> > s(l);
     }
 }
